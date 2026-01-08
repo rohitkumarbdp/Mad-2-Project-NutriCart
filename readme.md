@@ -120,7 +120,9 @@ Open a new terminal, activate the virtual environment, and run:
 celery -A main.celery_app worker --loglevel=info
 ```
 This starts the background task worker.
+
 ---
+
 All three processes must be running simultaneously.
 
 ### Notes
