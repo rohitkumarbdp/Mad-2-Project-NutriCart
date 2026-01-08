@@ -15,7 +15,7 @@ NutriCart.com is a full-stack online grocery store web application developed usi
 ## Python Version
 
 This project is developed and tested using **Python 3.10.13**.  
-Using Python 3.10 or 3.11 is recommended for compatibility with all dependencies.
+Using Python 3.10 is recommended for compatibility with all dependencies.
 
 ---
 
@@ -120,7 +120,7 @@ Open a new terminal, activate the virtual environment, and run:
 celery -A main.celery_app worker --loglevel=info
 ```
 This starts the background task worker.
-
+---
 All three processes must be running simultaneously.
 
 ### Notes
