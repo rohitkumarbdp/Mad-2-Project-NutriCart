@@ -91,3 +91,39 @@ Ensure the following are installed on your system:
 ```bash
 git clone <repository-url>
 cd NutriCart
+```
+### Step 2: Create and Activate Virtual Environment
+```
+python -m venv env
+source env/bin/activate
+```
+
+### Step 3: Install Dependencies
+```
+pip install -r requirements.txt
+```
+### Step 4: Run the Flask Application
+```
+python main.py
+```
+The application will now be accessible in your browser.
+
+### Step 5: Start Redis Server
+Redis must be running before starting Celery.
+```
+redis-server
+```
+Keep this terminal running.
+### Step 6: Start Celery Worker
+Open a new terminal, activate the virtual environment, and run:
+```
+celery -A main.celery_app worker --loglevel=info
+```
+This starts the background task worker.
+
+All three processes must be running simultaneously.
+
+### Notes
+•	The frontend is implemented using Vue.js and interacts with the Flask backend via APIs.
+•   The database is automatically created when the application is run for the first time.
+•	Background tasks such as email notifications and report generation are handled asynchronously using Celery.
